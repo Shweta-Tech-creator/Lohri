@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { IntroScene } from './components/IntroScene';
 import { StoryScene } from './components/StoryScene';
 import { GameScene } from './components/GameScene';
+import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
   const [stage, setStage] = useState<'intro' | 'story' | 'game'>('intro');
@@ -31,7 +32,7 @@ const App: React.FC = () => {
             <IntroScene />
           </motion.div>
         )}
-        
+
         {stage === 'story' && (
           <motion.div
             key="story-stage"
@@ -57,6 +58,7 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <Footer />
     </div>
   );
 };
